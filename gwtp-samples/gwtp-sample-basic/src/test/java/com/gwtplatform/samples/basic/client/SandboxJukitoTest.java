@@ -16,15 +16,28 @@
 
 package com.gwtplatform.samples.basic.client;
 
+import javax.inject.Inject;
+
 import org.jukito.JukitoModule;
 import org.jukito.JukitoRunner;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static org.junit.Assert.assertTrue;
+import com.gwtplatform.samples.basic.client.application.ApplicationPresenter;
+
+import static org.junit.Assert.assertNotNull;
+import static org.mockito.Matchers.eq;
+import static org.mockito.Mockito.verify;
 
 @RunWith(JukitoRunner.class)
 public class SandboxJukitoTest {
+
+    @Inject
+    private ApplicationPresenter presenter;
+
+    @Inject
+    private ApplicationPresenter.MyView view;
+
     /**
      */
     public static class Module extends JukitoModule {
@@ -35,6 +48,8 @@ public class SandboxJukitoTest {
 
     @Test
     public void testSandbox() {
-        assertTrue(true);
+        assertNotNull(presenter);
+        presenter.sendName("hola");
+        verify(view).setError(eq(""));
     }
 }

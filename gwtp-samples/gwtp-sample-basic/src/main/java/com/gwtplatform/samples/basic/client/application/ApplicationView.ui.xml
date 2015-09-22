@@ -30,7 +30,6 @@
             <g:Button ui:field="sendButton">Submit</g:Button>
             <g:HTML ui:field="error" styleName="{res.style.labelError}"/>
         </div>
-
     </g:HTMLPanel>
 </ui:UiBinder>
 

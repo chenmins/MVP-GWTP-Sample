@@ -38,7 +38,7 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
     interface MyProxy extends ProxyPlace<ApplicationPresenter> {
     }
 
-    interface MyView extends View, HasUiHandlers<ApplicationUiHandlers> {
+    public interface MyView extends View, HasUiHandlers<ApplicationUiHandlers> {
         void resetAndFocus();
 
         void setError(String errorText);

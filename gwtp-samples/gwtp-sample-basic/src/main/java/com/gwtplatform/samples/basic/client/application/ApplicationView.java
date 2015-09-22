@@ -59,5 +59,6 @@ public class ApplicationView extends ViewWithUiHandlers<ApplicationUiHandlers> i
     @UiHandler("sendButton")
     void onSend(ClickEvent event) {
         getUiHandlers().sendName(nameField.getText());
+
     }
 }
